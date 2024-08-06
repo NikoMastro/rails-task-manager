@@ -1,0 +1,13 @@
+<div class="container mt-3">
+  <h1><%= @task.name %></h1>
+  <p><%= @task.address %></p>
+  <%= link_to 'tasks', tasks_path, class: 'btn btn-success'  %>
+  <%= link_to edit_task_path(@task), class: 'btn btn-light' do %>
+    <i class="fa-solid fa-pencil"></i>
+  <% end %>
+  <!-- -->
+  <a href="" data-turbo-method='delete'></a>
+  <%= link_to task_path(@task), class: 'btn btn-light', data: { turbo_method: :delete, turbo_confirm: "Delete #{@task.name}?" } do %>
+    <i class="fa-solid fa-trash"></i>
+  <% end %>
+</div>

@@ -1,0 +1,12 @@
+<!--display tasks -->
+<div class="container">
+  <div class="d-flex justify-content-between align-items-end">
+    <h1>Tasks</h1>
+    <%= link_to 'New Task', new_task_path %>
+  </div>
+  <div class="cards">
+    <% @tasks.each do |task| %>
+      <p><%= link_to task.title, task_path(task), class: 'text-decoration-none text-dark' %></p>
+    <% end %>
+  </div>
+</div>
